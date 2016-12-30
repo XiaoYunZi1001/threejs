@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>伊通河大桥</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+   <![endif]-->
+</head>
+
+<body>
+  <div class="control-bar">
+    <button id="reset-view" type="button" class="btn btn-primary btn-sm">reset view</button>
+    <button id="front-view" type="button" class="btn btn-primary btn-sm">front view</button>
+    <button id="left-view" type="button" class="btn btn-primary btn-sm">left view</button>
+    <button id="top-view" type="button" class="btn btn-primary btn-sm">top view</button>
+    <button id="rotation" type="button" class="btn btn-primary btn-sm">toggle auto rotation</button>
+  </div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/TrackballControls.js"></script>
+  <script src="js/axes.js"></script>
+  <script src="js/Detector.js"></script>
+  <script src="js/stats.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+
+  <script src="model/test_0.js"></script>
+  <script src="model/test_1.js"></script>
+  <script src="model/test_2.js"></script>
+  <script src="model/test_3.js"></script>
+  <script src="model/test_4.js"></script>
+  <script src="model/test_5.js"></script>
+  <script src="model/test_6.js"></script>
+  <script src="model/test_7.js"></script>
+  <script src="model/test_8.js"></script>
+  <script src="model/test_9.js"></script>
+  <script src="model/test_10.js"></script>
+  <script src="model/test_11.js"></script>
+  <script src="model/test_12.js"></script>
+  <script src="model/test_13.js"></script>
+  <script src="model/test_14.js"></script>
+  <script src="model/test_15.js"></script>
+  <script src="model/test_16.js"></script>
+  <script src="model/test_17.js"></script>
+  <script src="model/test_18.js"></script>
+  <script src="model/test_19.js"></script>
+  <script src="model/test_20.js"></script>
+  <script src="model/test_21.js"></script>
+  <script src="model/test_22.js"></script>
+  <script src="model/test_23.js"></script>
+  <script src="model/test_24.js"></script>
+  <script src="model/test_25.js"></script>
+  <script src="model/test_26.js"></script>
+  <script src="model/test_27.js"></script>
+  <script src="model/test_28.js"></script>
+  <script src="model/test_29.js"></script>
+  <script src="model/test_30.js"></script>
+  <script src="model/test_31.js"></script>
+  <script src="model/test_32.js"></script>
+  <script src="model/test_33.js"></script>
+  <script src="model/test_34.js"></script>
+  <script src="model/test_35.js"></script>
+  <script src="model/test_36.js"></script>
+  <script src="model/test_37.js"></script>
+  <script src="model/test_38.js"></script>
+  <script src="model/test_39.js"></script>
+  <script src="model/test_40.js"></script>
+  <script src="model/test_41.js"></script>
+  <script src="model/test_42.js"></script>
+  <script src="model/test_43.js"></script>
+  <script src="model/test_44.js"></script>
+  <script src="model/test_45.js"></script>
+  <script src="model/test_46.js"></script>
+  <script src="model/test_47.js"></script>
+  <script src="model/test_48.js"></script>
+  <script src="model/test_49.js"></script>
+  <script src="model/test_50.js"></script>
+  <script src="model/test_51.js"></script>
+  <script src="model/test_52.js"></script>
+  <script src="model/test_53.js"></script>
+  <script src="model/test_54.js"></script>
+  <script src="model/test_55.js"></script>
+  <script src="model/test_56.js"></script>
+  <script src="model/test_57.js"></script>
+  <script src="model/test_58.js"></script>
+  <script src="model/test_59.js"></script>
+  <script src="model/test_60.js"></script>
+  <script src="model/test_61.js"></script>
+  <script src="model/test_62.js"></script>
+  <script src="model/test_63.js"></script>
+  <script src="model/test_64.js"></script>
+  <script src="model/test_65.js"></script>
+  <script src="model/test_66.js"></script>
+  <script src="model/test_67.js"></script>
+
+  <script>
+    if (!Detector.webgl) Detector.addGetWebGLMessage()
+    var camera, scene, renderer
+    var light
+    var controls
+    var isRotation = true
+
+    init()
+    animate()
+
+    function init() {
+
+      renderer = new THREE.WebGLRenderer({
+        antialias: true,    //抗锯齿
+      })
+
+      renderer.showMapEnabled = true      //?
+      renderer.setSize(window.innerWidth, window.innerHeight)
+      document.body.appendChild(renderer.domElement)
+      renderer.setClearColor(0xE6E6FA, 1)
+
+      // camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 3067.787, 160256.188)
+      // camera.position.x = 43131.836
+      // camera.position.y = 0.000
+      // camera.position.z = 0.000
+      // camera.up = new THREE.Vector3(0, 0, 1)
+      // var target = new THREE.Vector3(0.000, 0.000, 0.000)
+      // camera.lookAt(target)
+
+      camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 3067.787, 160256.188)
+      camera.position.x = 11994.53
+      camera.position.y = 6483.80
+      camera.position.z = 5145.94
+      camera.up = new THREE.Vector3(0, 0, 1)
+      var target = new THREE.Vector3(0.000, 0.000, 0.000)
+      camera.lookAt(target)
+
+      controls = new THREE.TrackballControls(camera)
+
+      controls.rotateSpeed = 0.5;//旋转速度
+
+      controls.dynamicDampingFactor = 0.5
+      controls.addEventListener('change', render)
+
+      scene = new THREE.Scene()
+
+      stats = new Stats()
+      stats.dom.style.top = 'initial'
+      stats.dom.style.bottom = '0px'
+      stats.showPanel(0)
+      document.body.appendChild(stats.dom)
+
+      light = new THREE.PointLight(0x999999)
+      light.position.set(55494.391, -73992.531, 110988.789)
+      scene.add(light)
+      light = new THREE.PointLight(0x4C4C4C)
+      light.position.set(-73992.523, -73992.531, 55494.391)
+      scene.add(light)
+      light = new THREE.PointLight(0x4C4C4C)
+      light.position.set(0.000, 73992.531, 73992.523)
+      scene.add(light)
+
+      light = new THREE.PointLight(0x999999)
+      light.position.set(55494.391, -73992.531, -110988.789)
+      scene.add(light)
+      light = new THREE.PointLight(0x4C4C4C)
+      light.position.set(-73992.523, -73992.531, -55494.391)
+      scene.add(light)
+      light = new THREE.PointLight(0x4C4C4C)
+      light.position.set(0.000, 73992.531, -73992.523)
+      scene.add(light)
+
+      var axes = buildAxes(221977.563)
+      scene.add(axes)
+
+      create_geometry_0(scene)
+      create_geometry_1(scene)
+      create_geometry_2(scene)
+      create_geometry_3(scene)
+      create_geometry_4(scene)
+      create_geometry_5(scene)
+      create_geometry_6(scene)
+      create_geometry_7(scene)
+      create_geometry_8(scene)
+      create_geometry_9(scene)
+      create_geometry_10(scene)
+      create_geometry_11(scene)
+      create_geometry_12(scene)
+      create_geometry_13(scene)
+      create_geometry_14(scene)
+      create_geometry_15(scene)
+      create_geometry_16(scene)
+      create_geometry_17(scene)
+      create_geometry_18(scene)
+      create_geometry_19(scene)
+      create_geometry_20(scene)
+      create_geometry_21(scene)
+      create_geometry_22(scene)
+      create_geometry_23(scene)
+      create_geometry_24(scene)
+      create_geometry_25(scene)
+      create_geometry_26(scene)
+      create_geometry_27(scene)
+      create_geometry_28(scene)
+      create_geometry_29(scene)
+      create_geometry_30(scene)
+      create_geometry_31(scene)
+      create_geometry_32(scene)
+      create_geometry_33(scene)
+      create_geometry_34(scene)
+      create_geometry_35(scene)
+      create_geometry_36(scene)
+      create_geometry_37(scene)
+      create_geometry_38(scene)
+      create_geometry_39(scene)
+      create_geometry_40(scene)
+      create_geometry_41(scene)
+      create_geometry_42(scene)
+      create_geometry_43(scene)
+      create_geometry_44(scene)
+      create_geometry_45(scene)
+      create_geometry_46(scene)
+      create_geometry_47(scene)
+      create_geometry_48(scene)
+      create_geometry_49(scene)
+      create_geometry_50(scene)
+      create_geometry_51(scene)
+      create_geometry_52(scene)
+      create_geometry_53(scene)
+      create_geometry_54(scene)
+      create_geometry_55(scene)
+      create_geometry_56(scene)
+      create_geometry_57(scene)
+      create_geometry_58(scene)
+      create_geometry_59(scene)
+      create_geometry_60(scene)
+      create_geometry_61(scene)
+      create_geometry_62(scene)
+      create_geometry_63(scene)
+      create_geometry_64(scene)
+      create_geometry_65(scene)
+      create_geometry_66(scene)
+      create_geometry_67(scene)
+
+      window.addEventListener('resize', onWindowResize, false)
+
+      scene.traverse(function(node) {
+        if (node instanceof THREE.Mesh) {
+          // insert your code here, for example:
+          //node.material = new THREE.MeshNormalMaterial()
+        }
+      })
+    }
+
+    function onWindowResize() {
+
+      camera.aspect = window.innerWidth / window.innerHeight
+      camera.updateProjectionMatrix()
+
+      renderer.setSize(window.innerWidth, window.innerHeight)
+
+      controls.handleResize()
+      render()
+    }
+
+    function animate() {
+      stats.begin()
+
+      if (isRotation) {
+        rotation()
+      }
+
+      requestAnimationFrame(animate)
+      renderer.render(scene, camera)
+      controls.update()
+      stats.end()
+    }
+
+    function render() {
+      renderer.render(scene, camera)
+    }
+
+    function rotation() {
+      var quaternion = new THREE.Quaternion()
+      quaternion.setFromAxisAngle( new THREE.Vector3( 0, 0, 1 ), Math.PI / 1000 )
+      camera.position.applyQuaternion(quaternion)
+    }
+  </script>
+  <script src="js/common1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+body {
+  margin: 0px;
+  background-color: 0xE6E6FA;
+  overflow: hidden;
+}
+.control-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
